@@ -2,9 +2,11 @@ import json
 from datetime import datetime
 from typing import Optional
 from server.context_store import context_store
+from skills.customer_research import TOOL_SCHEMA as _RESEARCH_SCHEMA, research_guest
 
 # Tool schemas — passed to agents.create()
 TOOL_SCHEMAS = [
+    _RESEARCH_SCHEMA,
     {
         "type": "custom",
         "name": "check_spa_availability",
@@ -131,6 +133,7 @@ def order_room_service(phone: str, items: list, note: Optional[str] = None) -> d
 
 def execute_tool(name: str, inputs: dict) -> str:
     handlers = {
+        "research_guest": research_guest,
         "check_spa_availability": check_spa_availability,
         "update_spa_reservation": update_spa_reservation,
         "update_pms_room_prep": update_pms_room_prep,
