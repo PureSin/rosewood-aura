@@ -1,16 +1,19 @@
 # Aura — Hackathon Task List
 
 ## 1. Backend Foundation
-> Use Claude Managed Agents (https://platform.claude.com/docs/en/managed-agents/overview) as the agent layer.
+> **Hackathon:** [OpenClaw](https://openclaw.ai/) as the agent loop engine — handles multi-turn context, tool calling, and messaging channel routing out of the box.
+> **Production architecture:** one Claude Managed Agent per guest (https://platform.claude.com/docs/en/managed-agents/overview), giving each guest a persistent, versioned agent with isolated context.
 
-- [ ] Spin up lightweight server (Node or Python)
-- [ ] Set up shared **context store** (SQLite or in-memory) for guest state across all channels
-- [ ] Define mock tools for Claude agents:
+- [x] Spin up Python FastAPI server
+- [x] Set up shared **context store** (in-memory) for guest state across all channels
+- [x] Define mock tools:
   - `update_pms_room_prep` — pre-cool room, queue welcome amenity
   - `check_spa_availability` — returns mock available slots
   - `update_spa_reservation` — reschedule or cancel booking
   - `order_room_service` — dispatch room service order
-- [ ] Wire tools into a Claude Managed Agent with a guest-aware system prompt
+- [ ] Swap agent loop from Managed Agents to OpenClaw engine
+- [ ] Wire mock tools into OpenClaw skill definitions
+- [ ] Validate guest-aware context injection into OpenClaw system prompt
 
 ---
 
