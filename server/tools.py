@@ -4,11 +4,13 @@ from typing import Optional
 from server.context_store import context_store
 from skills.customer_research import TOOL_SCHEMA as _RESEARCH_SCHEMA, research_guest
 from skills.create_guest_agent import TOOL_SCHEMA as _CREATE_AGENT_SCHEMA, create_guest_agent
+from skills.guest_agent_session import TOOL_SCHEMA as _GUEST_SESSION_SCHEMA, guest_agent_session
 
 # Tool schemas — passed to agents.create()
 TOOL_SCHEMAS = [
     _RESEARCH_SCHEMA,
     _CREATE_AGENT_SCHEMA,
+    _GUEST_SESSION_SCHEMA,
     {
         "type": "custom",
         "name": "check_spa_availability",
@@ -137,6 +139,7 @@ def execute_tool(name: str, inputs: dict) -> str:
     handlers = {
         "research_guest": research_guest,
         "create_guest_agent": create_guest_agent,
+        "guest_agent_session": guest_agent_session,
         "check_spa_availability": check_spa_availability,
         "update_spa_reservation": update_spa_reservation,
         "update_pms_room_prep": update_pms_room_prep,
