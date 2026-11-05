@@ -35,12 +35,14 @@
 
 ---
 
-## 4. Phase 3 — Live Phone Call (ElevenLabs)
+## 4. Phase 3 — Live Phone Call (Vapi)
 
-- [ ] Connect Twilio phone number to ElevenLabs Conversational AI (or TwiML + ElevenLabs TTS)
-- [ ] Inject full guest context (email + SMS history) into ElevenLabs system prompt before call
+- [x] Vapi account + private API key
+- [x] `server/vapi.py` webhook: `assistant-request` (inline Aris assistant), `tool-calls`, `end-of-call-report`
+- [ ] Attach a phone number in Vapi (import Twilio or provision) with Server URL → `{PUBLIC_BASE_URL}/vapi/webhook`
+- [ ] Verify guest context (email + SMS history) is spoken back on a live call
 - [ ] Agent handles live conversation and calls `order_room_service`
-- [ ] **Fallback:** pre-record ElevenLabs audio clip as backup if live call is unstable
+- [ ] **Fallback:** pre-record audio clip as backup if live call is unstable
 
 ---
 

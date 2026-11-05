@@ -7,8 +7,10 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 from server.context_store import context_store
 from server.agent_runner import run_session
+from server.vapi import router as vapi_router
 
 app = FastAPI(title="Aura Concierge API")
+app.include_router(vapi_router)
 
 
 @app.get("/health")

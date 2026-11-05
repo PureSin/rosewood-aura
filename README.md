@@ -66,4 +66,4 @@ Standalone capabilities agents invoke to serve guests. Each has a `SKILL.md` spe
 
 1. **Email** — Flight confirmation arrives → agent extracts arrival time → calls `update_pms_room_prep` to pre-cool the room and queue a welcome amenity.
 2. **SMS** — Guest texts to reschedule a massage → agent checks availability → updates booking → replies via Twilio.
-3. **Phone** — Guest calls for room service → ElevenLabs voice agent responds with full prior context: *"Of course, Mr. Ma — your double espresso will be at your door in 5 minutes."*
+3. **Phone** — Guest calls for room service → Vapi voice agent responds with full prior context: *"Of course, Mr. Ma — your double espresso will be at your door in 5 minutes."*

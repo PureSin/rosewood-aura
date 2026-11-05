@@ -29,7 +29,7 @@ Juging:
 2. **Phase 2: In-Stay (Text/SMS)** * **The Action:** The guest texts the concierge line: *"Running late from a meeting on Sand Hill Rd, can I push my massage back?"*
     - **The Result:** Claude intercept the text, checks live spa availability via tool-calling, updates the reservation, and texts back a confirmation.
 3. **Phase 3: The Pivot (Live Phone Call)** * **The Action:** The guest decides to call instead for an immediate, high-priority request: *"Actually, can I just get a double espresso sent to my room right now instead?"*
-    - **The Result:** Play a live **ElevenLabs** audio stream picking up the conversation *with full context of the previous text and email interactions*: *"Of course, Mr. Ma. I've cancelled the spa adjustment and alerted the Madera team. Your double espresso will be at your door in 5 minutes."*
+    - **The Result:** Play a live **Vapi** voice call picking up the conversation *with full context of the previous text and email interactions*: *"Of course, Mr. Ma. I've cancelled the spa adjustment and alerted the Madera team. Your double espresso will be at your door in 5 minutes."*
 
 This perfectly executes on the "Invisible Concierge" problem statement by proving that no matter how the guest reaches out, the hotel behaves as a single, omniscient entity.
 
